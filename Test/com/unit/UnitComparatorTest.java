@@ -36,7 +36,7 @@ public class UnitComparatorTest {
         assertTrue(u.compare(0.0254,"m"));
     }
     @Test
-    public void Test1mIsEqualToPoint100cm (){
+    public void Test1mIsEqualToPoint100centimeters (){
         Unit u = new Unit();
         u.addValue(1.0);
         u.addUnit("m");
