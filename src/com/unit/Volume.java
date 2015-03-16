@@ -3,7 +3,6 @@ package com.unit;
 public class Volume extends Comparator{
     private Double value;
     private UNITTYPE type;
-    private static final double PRECISION = 0.001;
 
     public Volume(double value, UNITTYPE type) {
         super(value, type);
@@ -15,7 +14,7 @@ public class Volume extends Comparator{
         if (o == null || getClass() != o.getClass()) return false;
 
         Volume volume = (Volume) o;
-        return (Math.abs(compare(volume)) < PRECISION);
+        return compare(volume);
     }
 
     @Override

@@ -3,7 +3,6 @@ package com.unit;
 public class Length extends Comparator{
     private Double value;
     private UNITTYPE type;
-    private static final double PRECISION = 0.1;
 
     public Length(double value, UNITTYPE type) {
         super(value, type);
@@ -15,7 +14,7 @@ public class Length extends Comparator{
         if (o == null || getClass() != o.getClass()) return false;
 
         Length length = (Length) o;
-        return (Math.abs(compare(length)) < PRECISION);
+        return compare(length);
     }
 
     @Override
