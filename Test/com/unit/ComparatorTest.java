@@ -33,4 +33,16 @@ public class ComparatorTest {
         Comparator c = new Comparator(2.0,UNITTYPE.INCH);
         assertTrue(c.compare(new Comparator(5.08, UNITTYPE.CM)));
     }
+
+    @Test
+    public void Test1kilometerIsEqualTo1000meters (){
+        Comparator c = new Comparator(1.0,UNITTYPE.KM);
+        assertTrue(c.compare(new Comparator(1000.0, UNITTYPE.M)));
+    }
+
+    @Test
+    public void Test1meterIsEqualTo1000millimeters (){
+        Comparator c = new Comparator(1.0,UNITTYPE.M);
+        assertTrue(c.compare(new Comparator(1000.0, UNITTYPE.MM)));
+    }
 }
