@@ -1,22 +1,12 @@
 package com.unit;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class Volume {
-    private double value;
+public class Volume extends Comparator{
+    private Double value;
     private UNITTYPE type;
-    public static final Map<UNITTYPE,Double> unitConversionTable = new HashMap<UNITTYPE, Double>();
     private static final double PRECISION = 0.001;
 
-    static {
-        unitConversionTable.put(UNITTYPE.GALLON, 1.0);
-        unitConversionTable.put(UNITTYPE.LITERS, 0.264172);
-    }
-
     public Volume(double value, UNITTYPE type) {
-        this.value = value;
-        this.type = type;
+        super(value, type);
     }
 
     @Override
@@ -30,17 +20,8 @@ public class Volume {
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        temp = Double.doubleToLongBits(value);
-        result = (int) (temp ^ (temp >>> 32));
+        int result = value != null ? value.hashCode() : 0;
         result = 31 * result + (type != null ? type.hashCode() : 0);
         return result;
-    }
-
-    private Double compare(Volume volume){
-        double unit2 = unitConversionTable.get(volume.type) * volume.value;
-        double unit1 = unitConversionTable.get(this.type) * this.value;
-        return unit1 - unit2;
     }
 }
