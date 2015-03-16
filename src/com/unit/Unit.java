@@ -11,11 +11,10 @@ public class Unit {
 
 
     public Unit (){
-        unitConversionTable.put("inch",12.0);
-        unitConversionTable.put("ft", 1.0);
-
-//        unitConversionTable.put("cm",0.0);
-//        unitConversionTable.put("m",0.0);
+        unitConversionTable.put("inch",1.0);
+        unitConversionTable.put("ft", 12.0);
+        unitConversionTable.put("cm",0.39370079);
+        unitConversionTable.put("m",39.3700787);
     }
 
     public void addValue(Double value) {
@@ -27,9 +26,8 @@ public class Unit {
     }
 
     public boolean compare(Double value, String type) {
-        double unit2 = unitConversionTable.get(type) / value;
-        double unit1 = unitConversionTable.get(this.type) / this.value;
-
+        double unit2 = unitConversionTable.get(type) * value;
+        double unit1 = unitConversionTable.get(this.type) * this.value;
         return Math.abs(unit2 - unit1) < PRECISION;
 
     }
