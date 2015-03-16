@@ -36,4 +36,9 @@ public class LengthComparatorTest {
         Length u = new Length(2.0,UNITTYPE.INCH);
         assertTrue(u.equals(new Length(5.08, UNITTYPE.CM)));
     }
+    @Test
+    public void Test1meterIsEqualTo1000millimeters (){
+        Length u = new Length(1.0,UNITTYPE.M);
+        assertTrue(u.equals(new Length(1000.0, UNITTYPE.MM)));
+    }
 }

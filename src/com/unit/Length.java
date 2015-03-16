@@ -14,6 +14,8 @@ public class Length {
         unitConversionTable.put(UNITTYPE.FOOT, 12.0);
         unitConversionTable.put(UNITTYPE.CM,0.39370079);
         unitConversionTable.put(UNITTYPE.M,39.3700787);
+        unitConversionTable.put(UNITTYPE.MM,0.0393701);
+        unitConversionTable.put(UNITTYPE.KM,39370.1);
     }
 
     public Length(double value, UNITTYPE type) {
@@ -40,6 +42,6 @@ public class Length {
     public double compare(Length length) {
         double unit2 = unitConversionTable.get(length.type) * length.value;
         double unit1 = unitConversionTable.get(this.type) * this.value;
-        return unit2-unit1;
+        return unit1 - unit2;
     }
 }
