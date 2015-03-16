@@ -7,7 +7,7 @@ public class Length {
     private Double value;
     private UNITTYPE type;
     public static final Map<UNITTYPE,Double> unitConversionTable = new HashMap<UNITTYPE, Double>();
-    private static final double PRECISION = 0.001;
+    private static final double PRECISION = 0.1;
 
     static {
         unitConversionTable.put(UNITTYPE.INCH, 1.0);

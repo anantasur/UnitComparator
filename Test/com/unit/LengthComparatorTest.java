@@ -41,4 +41,9 @@ public class LengthComparatorTest {
         Length u = new Length(1.0,UNITTYPE.M);
         assertTrue(u.equals(new Length(1000.0, UNITTYPE.MM)));
     }
+    @Test
+    public void Test1kilometerIsEqualTo1000meters (){
+        Length u = new Length(1.0,UNITTYPE.KM);
+        assertTrue(u.equals(new Length(1000.0, UNITTYPE.M)));
+    }
 }
