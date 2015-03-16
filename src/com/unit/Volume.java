@@ -11,7 +11,7 @@ public class Volume {
 
     static {
         unitConversionTable.put(UNITTYPE.GALLON, 1.0);
-        unitConversionTable.put(UNITTYPE.LITERS, 3.78541178);
+        unitConversionTable.put(UNITTYPE.LITERS, 0.264172);
     }
 
     public Volume(double value, UNITTYPE type) {
@@ -41,6 +41,6 @@ public class Volume {
     private Double compare(Volume volume){
         double unit2 = unitConversionTable.get(volume.type) * volume.value;
         double unit1 = unitConversionTable.get(this.type) * this.value;
-        return unit2-unit1;
+        return unit1 - unit2;
     }
 }
