@@ -3,13 +3,13 @@ package com.unit;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ScalarQuantity {
+public class ScalarQuantity<T> {
     private final double value;
-    private final UNITTYPE type;
+    private final T type;
     private static final double PRECISION = 0.1;
-    public Map<UNITTYPE,Double> unitConversionTable = new HashMap<UNITTYPE, Double>();
+    public Map<T,Double> unitConversionTable = new HashMap<T, Double>();
 
-    public ScalarQuantity(double value, UNITTYPE type, Map<UNITTYPE, Double> unitConversionTable) {
+    public ScalarQuantity(double value, T type, Map<T, Double> unitConversionTable) {
         this.value = value;
         this.type = type;
         this.unitConversionTable = unitConversionTable;
@@ -43,7 +43,7 @@ public class ScalarQuantity {
         return result;
     }
 
-    public double add(ScalarQuantity len2, UNITTYPE type) {
+    public double add(ScalarQuantity len2, T type) {
         Double sum =  convert(len2)+ convert(this);
         return Math.round(sum / unitConversionTable.get(type)*1000.0)/1000.0;
     }
