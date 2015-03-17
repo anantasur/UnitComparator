@@ -3,12 +3,12 @@ package com.unit;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Length extends Comparator{
-    private Double value;
-    private UNITTYPE type;
-    public static Map<UNITTYPE,Double> unitConversionTable = new HashMap<UNITTYPE, Double>();
+public class Length extends ScalarQuantity {
+
+   public static Map<UNITTYPE,Double> unitConversionTable;
 
     static {
+        unitConversionTable = new HashMap<UNITTYPE, Double>();
         unitConversionTable.put(UNITTYPE.INCH, 1.0);
         unitConversionTable.put(UNITTYPE.FOOT, 12.0);
         unitConversionTable.put(UNITTYPE.CM,0.39370079);

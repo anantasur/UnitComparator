@@ -47,5 +47,22 @@ public class LengthComparatorTest {
         Length u = new Length(1.0,UNITTYPE.KM);
         assertTrue(u.equals(new Length(1000.0, UNITTYPE.M)));
     }
-    
+    @Test
+    public void Test1MeterSum1MeterShouldGive2Meters(){
+        Length len1 = new Length(1.0,UNITTYPE.M);
+        Length len2 = new Length(1.0,UNITTYPE.M);
+        assertEquals(2.0,len1.add(len2,UNITTYPE.M),0.0);
+    }
+    @Test
+    public void Test1MeterSum1ftShouldGive4_281feet(){
+        Length len1 = new Length(1.0,UNITTYPE.M);
+        Length len2 = new Length(1.0,UNITTYPE.FOOT);
+        assertEquals(4.281,len1.add(len2,UNITTYPE.FOOT),0.0);
+    }
+    @Test
+    public void Test1InchSum1ftShouldGive1_083feet(){
+        Length len1 = new Length(1.0,UNITTYPE.INCH);
+        Length len2 = new Length(1.0,UNITTYPE.FOOT);
+        assertEquals(1.083,len1.add(len2,UNITTYPE.FOOT),0.0);
+    }
 }
